@@ -1,9 +1,18 @@
-Hey everyone, I'm Bhuvnesh
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=git,ts,next,md,docker" />
+  </a>
+</p>
 
-nice to meet you all!
+<h2 align="center">Welcome to MLdocs </h2>
 
-What you're looking at is a simple yet powerful project for documenting machine learning topics and concepts. It started as a way to save ML practicals and notes, but has grown into much more.
+Hey everyone, I’m **Bhuvnesh**
 
-This project is completely open source, so feel free to contribute!
+Nice to meet you!
 
-See you around!
+**MLdocs** is a simple and beginner-friendly project for documenting **Machine Learning concepts**.  
+It started as a place to keep my ML notes and practicals, but it’s now growing into something bigger and more useful for everyone.
+
+The best part? It’s **open source** — just follow some contribution rules and feel free to start contributing!
+
+Happy learning, and see you around.
