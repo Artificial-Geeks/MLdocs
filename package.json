@@ -1,9 +1,11 @@
 {
   "name": "mldocs",
-  "description": "MLDocs - Documentation site for Machine Learning",
+  "description": "MLDocs - Documentation site for Machine Learning with Practical Examples and Tutorials.",
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "license": "ISC",
+  "author": "Bhuvnesh Verma",
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbo",
