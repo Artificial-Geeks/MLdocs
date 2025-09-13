@@ -16,3 +16,12 @@ It started as a place to keep my ML notes and practicals, but it’s now growing
 The best part? It’s **open source** — just follow some contribution rules and feel free to start contributing!
 
 Happy learning, and see you around.
+
+<p align="center">
+  <span>
+    <img src="https://img.shields.io/badge/Open%20Source-MLdocs-black?style=social&logo=github" alt="Open Source" style="display:inline-block; vertical-align:middle; margin-right:10px;" />
+  </span>
+  <span>
+    <img src="https://img.shields.io/badge/License-ISC-blue?style=social&logo=creativecommons" alt="License: ISC" style="display:inline-block; vertical-align:middle;" />
+  </span>
+</p>
