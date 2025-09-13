@@ -99,9 +99,3 @@ docs(content): fix typo in introduction page
 - Use clear, simple language.
 - Add examples where useful.
 - Use Markdown best practices (headings, lists, links).
-
----
-
-## Code of Conduct
-
-By contributing, you agree to follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
