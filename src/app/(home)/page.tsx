@@ -11,6 +11,7 @@ export default function HomePage() {
         </Link>{' '}
         and see the documentation.
       </p>
+      <p> Other things will be handle later :)</p>
     </main>
   );
 }

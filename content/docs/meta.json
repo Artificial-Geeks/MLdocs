@@ -1,0 +1,16 @@
+{
+  "title": "Fumadocs Core",
+  "description": "The headless library",
+  "icon": "Cuboid",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "---Labs---",
+    "Labs/lab-1",
+    "Labs/lab-2",
+    "---Topics---",
+    "Topics/linear-regression",
+    "Topics/confusion-matrix"
+  ]
+}

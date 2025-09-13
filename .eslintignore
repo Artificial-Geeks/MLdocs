@@ -6,3 +6,5 @@ dist/
 .husky/
 content/
 *.log
+package.json
+package-lock.json
