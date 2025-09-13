@@ -1,0 +1,87 @@
+# Bug Report Reproduction Check
+# ---------------------------------
+# This workflow runs when a new issue is opened and labeled as "bug".
+# It analyzes whether the bug report has enough details for MLdocs (built with Fumadocs).
+# If details are missing → it comments asking for more info.
+# If details are complete → it comments with a thank-you and a structured summary.
+
+name: Bug Report Reproduction Check
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+  models: read
+
+jobs:
+  reproduction-steps-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch Issue
+        id: issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = context.issue.number
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number
+            })
+            core.setOutput('title', issue.data.title)
+            core.setOutput('body', issue.data.body)
+
+      - name: Analyze Issue for Reproduction
+        if: contains(join(github.event.issue.labels.*.name, ','), 'bug')
+        id: analyze-issue
+        uses: actions/ai-inference@v1
+        with:
+          model: mistral-ai/ministral-3b
+          system-prompt: |
+            You are analyzing bug reports for **MLdocs**, a documentation site built with Fumadocs.  
+
+            ### Your task:
+            - If the bug report is **incomplete** (missing one or more of the points below), return a short, polite message asking for the missing info.  
+            - If the bug report is **complete**, return a friendly thank-you note along with a **clear, point-wise summary** of the issue.  
+
+            ### A complete bug report must include:
+              1. **Where** the issue occurs (page link, section, or topic name)  
+              2. **What seems wrong or missing** in the docs  
+              3. **What the reporter expected instead** (the correct/intended behavior)  
+
+            Environment details (like browser/OS/device) are optional — do not require them.  
+
+            ### Output format:
+            - For incomplete reports → a short friendly request like:  
+              "Thanks for reporting! Could you please share the page link where you found this issue?"  
+            - For complete reports →  
+              ```
+              ✅ Thanks for reporting this bug! Here’s a quick summary for contributors:
+              - **Title:** <issue title>
+              - **Location:** <page/section/topic>
+              - **Reported Problem:** <what’s wrong>
+              - **Expected Behavior:** <what should happen>
+              ```
+            Keep your response concise, polite, and easy to read.
+          prompt: |
+            Title: ${{ steps.issue.outputs.title }}
+            Body: ${{ steps.issue.outputs.body }}
+
+      - name: Comment on Issue
+        if: contains(join(github.event.issue.labels.*.name, ','), 'bug')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = context.issue.number
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body: process.env.AI_RESPONSE
+            })
+        env:
+          AI_RESPONSE: ${{ steps.analyze-issue.outputs.response }}
