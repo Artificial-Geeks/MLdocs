@@ -1,6 +1,6 @@
 # Contributing to MLdocs
 
-Thank you for considering contributing to **[MLdocs](https://github.com/Artificial-Geeks/MLdocs)**.
+Thank you for considering contributing to **[MLdocs](https://github.com/MasterBhuvnesh/MLdocs)**.
 We welcome contributions of all kinds — bug reports, fixes, improvements, and new content.
 
 ---
@@ -46,7 +46,7 @@ We welcome contributions of all kinds — bug reports, fixes, improvements, and 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Artificial-Geeks/MLdocs.git
+   git clone https://github.com/MasterBhuvnesh/MLdocs.git
    cd MLdocs
    ```
 
