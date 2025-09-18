@@ -7,8 +7,9 @@
     "---Overview---",
     "index",
     "---Labs---",
-    "Labs/lab-1",
-    "Labs/lab-2",
+    "Labs/index",
+    "Labs/1",
+    "Labs/2",
     "---Topics---",
     "Topics/linear-regression",
     "Topics/confusion-matrix"
