@@ -10,6 +10,7 @@ In this practical, we will perform **Exploratory Data Analysis (EDA)** on the Ti
   <div className="fd-step py-2">Load Dataset</div>
   <div className="fd-step py-2">Perform Basic EDA</div>
   <div className="fd-step py-2">Handle Missing Values</div>
+  <div className="fd-step py-2">Handle Duplicate Values</div>
   <div className="fd-step py-2">Advanced EDA</div>
   <div className="fd-step py-2">Analysis & Insights</div>
   <div className="fd-step py-2">Split Dataset for Model Training</div>
@@ -36,3 +37,66 @@ from sklearn.preprocessing import StandardScaler
 - **seaborn** → Advanced data visualization
 - **StandardScaler** (from `sklearn.preprocessing`) → Feature scaling
 - **train_test_split** (from `sklearn.model_selection`) → Splitting dataset into training and testing sets
+
+---
+
+### Load the Dataset
+
+```py title="Importing Dataset"
+df = pd.read_excel('/dataset/titanic.xlsx')
+```
+
+We have loaded the data from the Excel file titanic.xlsx into a pandas DataFrame called df. A DataFrame is like a table (similar to a spreadsheet) that makes it easy to analyze and manipulate data in Python.
+
+---
+
+### Perform Basic EDA
+
+After loading the dataset, the next step is to understand its structure and content.  
+This includes looking at the first and last few rows, data types, missing values, and basic statistics.
+
+```py title="Basic EDA"
+# Display the first 5 rows of the dataset
+display(df.head())
+
+# Display the last 5 rows of the dataset
+display(df.tail())
+
+# Display concise summary of dataset including data types and missing values
+df.info()
+
+# Display summary statistics for numerical columns
+display(df.describe())
+
+# Display the shape (number of rows and columns)
+display(df.shape)
+```
+
+**Explanation of Commands:**
+
+1. **`df.head()`**
+   - **Why:** To quickly inspect the first few entries and get a sense of the dataset structure.
+   - **What it does:** Displays the first 5 rows by default.
+   - **Output:** Table with the first 5 rows of Titanic dataset.
+
+2. **`df.tail()`**
+   - **Why:** To check the last few entries, ensuring data is correctly loaded till the end.
+   - **What it does:** Displays the last 5 rows by default.
+   - **Output:** Table with the last 5 rows of Titanic dataset.
+
+3. **`df.info()`**
+   - **Why:** To get a concise summary of the dataset before cleaning.
+   - **What it does:** Shows the number of rows, column names, data types, and count of non-null values (helpful for spotting missing data).
+   - **Output:** Summary table with columns, data types, and missing values.
+
+4. **`df.describe()`**
+   - **Why:** To analyze the distribution of numerical features.
+   - **What it does:** Generates descriptive statistics like mean, median, standard deviation, min, max, and quartiles.
+   - **Output:** Table with summary statistics for numerical columns (e.g., Age, Fare).
+
+5. **`df.shape`**
+   - **Why:** To quickly know the dataset size (number of rows and columns).
+   - **What it does:** Returns a tuple `(rows, columns)`.
+   - **Output:** For Titanic dataset, typically `(891, 12)`.
+
+---
