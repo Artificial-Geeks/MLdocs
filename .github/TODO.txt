@@ -1,0 +1,7 @@
+- The font used for code and the search bar (Ctrl + K) is inconsistent.
+- The content for Lab 1 needs improvement.
+- The contributing documentation requires some final touches.
+- Create a simple, optimized, and visually appealing landing page.
+- The content needs further development.
+- Set up a GitHub workflow for the production pipeline.
+- Configure a workflow based on patch, minor, and major updates.
